@@ -10,10 +10,6 @@
 #
 # History
 #
-
-echo "alias dotfiles='/usr/bin/git --git-dir=\$HOME/.dotfiles --work-tree=\$HOME'" >> ~/.bashrc
-source ~/.bashrc
-
 export ZIM_HOME=/path/to/your/desired/directory
 export XDG_DATA_DIRS=/var/lib/flatpak/exports/share:/home/soocil/.local/share/flatpak/exports/share:$XDG_DATA_DIRS
 export PATH="$PATH:/opt/nvim"
@@ -28,7 +24,8 @@ setopt HIST_IGNORE_ALL_DUPS
 
 # Set editor default keymap to emacs (`-e`) or vi (`-v`)
 bindkey -e
-
+# Set ctrl + Backspace to remove whole word at oncce
+bindkey '^H' backward-kill-word
 # Prompt for spelling correction of commands.
 #setopt CORRECT
 
@@ -137,7 +134,7 @@ unset key
 # }}} End configuration added by Zim install
 
  
-
+plugins=(zsh-autosuggestions)
 
 #export NVM_DIR="$HOME/.nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
