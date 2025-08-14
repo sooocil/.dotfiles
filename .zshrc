@@ -29,6 +29,11 @@ bindkey '^H' backward-kill-word
 # Prompt for spelling correction of commands.
 #setopt CORRECT
 
+# Ctrl + Left / Right to move by word / skip word
+bindkey '^[[1;5C' forward-word   # Ctrl + Right Arrow
+bindkey '^[[1;5D' backward-word  # Ctrl + Left Arrow
+
+
 # Customize spelling correction prompt.
 #SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
 
@@ -133,6 +138,7 @@ for key ('j') bindkey -M vicmd ${key} history-substring-search-down
 unset key
 # }}} End configuration added by Zim install
 
+
  
 plugins=(zsh-autosuggestions)
 
@@ -146,3 +152,11 @@ clear
 export PATH=/home/soocil/Downloads/OpenJDK11U-jdk_x64_linux_hotspot_11.0.26_4/jdk-11.0.26+4/bin:$PATH
 
 ZSH_THEME=robbyrussell
+
+# pnpm
+export PNPM_HOME="/home/soocil/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
