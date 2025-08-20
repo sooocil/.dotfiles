@@ -13,7 +13,7 @@
 export ZIM_HOME=/path/to/your/desired/directory
 export XDG_DATA_DIRS=/var/lib/flatpak/exports/share:/home/soocil/.local/share/flatpak/exports/share:$XDG_DATA_DIRS
 export PATH="$PATH:/opt/nvim"
-
+export PATH=~/.npm-global/bin:$PATH
 
 # Remove older command from the history if a duplicate is to be added.
 setopt HIST_IGNORE_ALL_DUPS
@@ -32,6 +32,9 @@ bindkey '^H' backward-kill-word
 # Ctrl + Left / Right to move by word / skip word
 bindkey '^[[1;5C' forward-word   # Ctrl + Right Arrow
 bindkey '^[[1;5D' backward-word  # Ctrl + Left Arrow
+
+# Bind Ctrl+Z to undo in the command line
+bindkey '^Z' undo
 
 
 # Customize spelling correction prompt.
