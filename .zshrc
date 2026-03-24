@@ -14,6 +14,9 @@ export ZIM_HOME=/path/to/your/desired/directory
 export XDG_DATA_DIRS=/var/lib/flatpak/exports/share:/home/soocil/.local/share/flatpak/exports/share:$XDG_DATA_DIRS
 export PATH="$PATH:/opt/nvim"
 export PATH=~/.npm-global/bin:$PATH
+export PATH="$HOME/.npm-global/bin:$PATH"
+echo "export GTK_THEME=WhiteSur-Dark"
+
 
 # Remove older command from the history if a duplicate is to be added.
 setopt HIST_IGNORE_ALL_DUPS
@@ -154,7 +157,7 @@ clear
 
 export PATH=/home/soocil/Downloads/OpenJDK11U-jdk_x64_linux_hotspot_11.0.26_4/jdk-11.0.26+4/bin:$PATH
 
-ZSH_THEME=robbyrussell
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # pnpm
 export PNPM_HOME="/home/soocil/.local/share/pnpm"
@@ -163,3 +166,4 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+alias gamedev='source ~/gamedev/venv/bin/activate'
